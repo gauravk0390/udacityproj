@@ -1,0 +1,40 @@
+Sending build context to Docker daemon  45.77MB
+Step 1/6 : FROM python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 5548d33c82e8
+Step 3/6 : COPY . app.py /app/
+ ---> Using cache
+ ---> f702c3fd9951
+Step 4/6 : RUN pip install --no-cache-dir --upgrade pip &&    pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
+ ---> Using cache
+ ---> 9121887ad2ed
+Step 5/6 : EXPOSE 80
+ ---> Using cache
+ ---> c133f35a625f
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Using cache
+ ---> 0c7a56ae7994
+Successfully built 0c7a56ae7994
+Successfully tagged machinelearning:latest
+REPOSITORY                                                                                  TAG                                           IMAGE ID       CREATED              SIZE
+machinelearning                                                                             latest                                        0c7a56ae7994   About a minute ago   1.24GB
+<none>                                                                                      <none>                                        56faa1f49919   2 hours ago          1.24GB
+<none>                                                                                      <none>                                        0a6e96c686bf   2 hours ago          1.24GB
+<none>                                                                                      <none>                                        3635ec2a34ad   2 hours ago          1.24GB
+api                                                                                         latest                                        c991652d5b5c   20 hours ago         1.35GB
+inferencefunction                                                                           rapid-1.57.0-x86_64                           b53ebc38f6fa   36 hours ago         655MB
+506225212727.dkr.ecr.us-east-1.amazonaws.com/samapp7427b055/inferencefunction7c73919drepo   inferencefunction-4435567b235a-python3.8-v1   4435567b235a   36 hours ago         639MB
+inferencefunction                                                                           python3.8-v1                                  4435567b235a   36 hours ago         639MB
+<none>                                                                                      <none>                                        bf125cd4822e   3 days ago           639MB
+public.ecr.aws/lambda/python                                                                3.8                                           cb53ce0865fa   4 days ago           620MB
+public.ecr.aws/sam/emulation-python3.9                                                      rapid-1.57.0-x86_64                           3d20e8d99d8e   4 days ago           514MB
+public.ecr.aws/sam/build-python3.9                                                          latest-x86_64                                 39ba0a3b6ec3   7 days ago           2.28GB
+public.ecr.aws/sam/emulation-python3.9                                                      latest-x86_64                                 e5fefdfbf2bc   7 days ago           497MB
+python                                                                                      3.7.3-stretch                                 34a518642c76   3 years ago          929MB
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on

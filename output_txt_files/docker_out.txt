@@ -1,0 +1,130 @@
+(.udacityproj) voclabs:~/environment/DevOps_Microservices/project-ml-microservice-kubernetes (master) $ ./run_docker.sh
+Sending build context to Docker daemon  45.77MB
+Step 1/6 : FROM python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 5548d33c82e8
+Step 3/6 : COPY . app.py /app/
+ ---> e62891b97527
+Step 4/6 : RUN pip install --no-cache-dir --upgrade pip &&    pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
+ ---> Running in 6bc6f5e5f6dd
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/09/bd/2410905c76ee14c62baf69e3f4aa780226c1bbfc9485731ad018e35b0cb5/pip-22.3.1-py3-none-any.whl (2.1MB)
+Installing collected packages: pip
+  Found existing installation: pip 19.1.1
+    Uninstalling pip-19.1.1:
+      Successfully uninstalled pip-19.1.1
+Successfully installed pip-22.3.1
+Collecting Click==7.0
+  Downloading Click-7.0-py2.py3-none-any.whl (81 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.3/81.3 kB 62.5 MB/s eta 0:00:00
+Collecting Flask==1.0.2
+  Downloading Flask-1.0.2-py2.py3-none-any.whl (91 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.4/91.4 kB 151.3 MB/s eta 0:00:00
+Collecting itsdangerous==1.1.0
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting Jinja2==2.10.3
+  Downloading Jinja2-2.10.3-py2.py3-none-any.whl (125 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.3/125.3 kB 159.7 MB/s eta 0:00:00
+Collecting MarkupSafe==1.1.1
+  Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux2010_x86_64.whl (33 kB)
+Collecting numpy==1.17.2
+  Downloading numpy-1.17.2-cp37-cp37m-manylinux1_x86_64.whl (20.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.3/20.3 MB 92.3 MB/s eta 0:00:00
+Collecting pandas==0.24.2
+  Downloading pandas-0.24.2-cp37-cp37m-manylinux1_x86_64.whl (10.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 86.2 MB/s eta 0:00:00
+Collecting python-dateutil==2.8.0
+  Downloading python_dateutil-2.8.0-py2.py3-none-any.whl (226 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.8/226.8 kB 167.5 MB/s eta 0:00:00
+Collecting pytz==2019.3
+  Downloading pytz-2019.3-py2.py3-none-any.whl (509 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 167.2 MB/s eta 0:00:00
+Collecting scikit-learn==0.20.3
+  Downloading scikit_learn-0.20.3-cp37-cp37m-manylinux1_x86_64.whl (5.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 102.7 MB/s eta 0:00:00
+Collecting scipy==1.3.1
+  Downloading scipy-1.3.1-cp37-cp37m-manylinux1_x86_64.whl (25.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 25.2/25.2 MB 105.3 MB/s eta 0:00:00
+Collecting six==1.12.0
+  Downloading six-1.12.0-py2.py3-none-any.whl (10 kB)
+Collecting Werkzeug==0.16.0
+  Downloading Werkzeug-0.16.0-py2.py3-none-any.whl (327 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 327.3/327.3 kB 51.9 MB/s eta 0:00:00
+Collecting pylint==2.4.4
+  Downloading pylint-2.4.4-py3-none-any.whl (302 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 303.0/303.0 kB 89.0 MB/s eta 0:00:00
+Collecting astroid<2.4,>=2.3.0
+  Downloading astroid-2.3.3-py3-none-any.whl (205 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 205.7/205.7 kB 164.3 MB/s eta 0:00:00
+Collecting mccabe<0.7,>=0.6
+  Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting isort<5,>=4.2.5
+  Downloading isort-4.3.21-py2.py3-none-any.whl (42 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.3/42.3 kB 132.0 MB/s eta 0:00:00
+Collecting wrapt==1.11.*
+  Downloading wrapt-1.11.2.tar.gz (27 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting lazy-object-proxy==1.4.*
+  Downloading lazy_object_proxy-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (56 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.5/56.5 kB 128.9 MB/s eta 0:00:00
+Collecting typed-ast<1.5,>=1.4.0
+  Downloading typed_ast-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (743 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 743.4/743.4 kB 142.4 MB/s eta 0:00:00
+Building wheels for collected packages: wrapt
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.11.2-cp37-cp37m-linux_x86_64.whl size=71329 sha256=8dd9c1814587c5afec4e637cbe4bb11e0847a96bb8f57eb790315206957c5943
+  Stored in directory: /tmp/pip-ephem-wheel-cache-2sim577o/wheels/ac/7b/9a/b4dd4f4bce9cc74996b980d7a2de1421d9a5c57a83963be12f
+Successfully built wrapt
+Installing collected packages: wrapt, typed-ast, pytz, mccabe, Werkzeug, six, numpy, MarkupSafe, lazy-object-proxy, itsdangerous, isort, Click, scipy, python-dateutil, Jinja2, astroid, scikit-learn, pylint, pandas, Flask
+Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10.3 MarkupSafe-1.1.1 Werkzeug-0.16.0 astroid-2.3.3 isort-4.3.21 itsdangerous-1.1.0 lazy-object-proxy-1.4.3 mccabe-0.6.1 numpy-1.17.2 pandas-0.24.2 pylint-2.4.4 python-dateutil-2.8.0 pytz-2019.3 scikit-learn-0.20.3 scipy-1.3.1 six-1.12.0 typed-ast-1.4.3 wrapt-1.11.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+Removing intermediate container 6bc6f5e5f6dd
+ ---> eb7d71cf99c0
+Step 5/6 : EXPOSE 80
+ ---> Running in 3bf19da5ed2a
+Removing intermediate container 3bf19da5ed2a
+ ---> 82dbc0954df5
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Running in 564e62fd65e2
+Removing intermediate container 564e62fd65e2
+ ---> e9207647637e
+Successfully built e9207647637e
+Successfully tagged machinelearning:latest
+REPOSITORY                                                                                  TAG                                           IMAGE ID       CREATED                  SIZE
+machinelearning                                                                             latest                                        e9207647637e   Less than a second ago   1.24GB
+<none>                                                                                      <none>                                        0c7a56ae7994   2 minutes ago            1.24GB
+<none>                                                                                      <none>                                        56faa1f49919   2 hours ago              1.24GB
+<none>                                                                                      <none>                                        0a6e96c686bf   2 hours ago              1.24GB
+<none>                                                                                      <none>                                        3635ec2a34ad   2 hours ago              1.24GB
+api                                                                                         latest                                        c991652d5b5c   20 hours ago             1.35GB
+inferencefunction                                                                           rapid-1.57.0-x86_64                           b53ebc38f6fa   36 hours ago             655MB
+506225212727.dkr.ecr.us-east-1.amazonaws.com/samapp7427b055/inferencefunction7c73919drepo   inferencefunction-4435567b235a-python3.8-v1   4435567b235a   36 hours ago             639MB
+inferencefunction                                                                           python3.8-v1                                  4435567b235a   36 hours ago             639MB
+<none>                                                                                      <none>                                        bf125cd4822e   3 days ago               639MB
+public.ecr.aws/lambda/python                                                                3.8                                           cb53ce0865fa   4 days ago               620MB
+public.ecr.aws/sam/emulation-python3.9                                                      rapid-1.57.0-x86_64                           3d20e8d99d8e   4 days ago               514MB
+public.ecr.aws/sam/build-python3.9                                                          latest-x86_64                                 39ba0a3b6ec3   7 days ago               2.28GB
+public.ecr.aws/sam/emulation-python3.9                                                      latest-x86_64                                 e5fefdfbf2bc   7 days ago               497MB
+python                                                                                      3.7.3-stretch                                 34a518642c76   3 years ago              929MB
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-931-260
+[2022-11-11 13:11:57,365] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2022-11-11 13:11:57,381] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-11-11 13:11:57,392] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+172.17.0.1 - - [11/Nov/2022 13:11:57] "POST /predict HTTP/1.1" 200 -
